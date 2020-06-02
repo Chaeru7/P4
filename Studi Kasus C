@@ -1,0 +1,163 @@
+ #include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+	int uc[15]={60,100,150,300,450,500,750,1000,2000,5000,10000,15000,25000,50000,100000};
+	int harga_uc[15]={1400,40000,50000,74000,149000,359000,701000,1000000,1500000,2500000,3000000,3500000,4000000,5550000,7000000};
+	int saldo = 10000000;
+	int harga, pilih;
+	char lagi;
+	
+int menu(){
+	
+	printf("\n\n\n======DAFTAR JUMLAH UC BESERTA HARGANYA=====\n\n");
+	printf("\n|-------|-------------------|-------------|\n");
+	printf("| kode  |\tJumlah UC   |\tHarga(Rp.)|\n");
+	printf("|       |                   |             |\n");
+	printf("|-------|-------------------|-------------|\n");
+		for (int y=0;y<15;y++){
+			printf("|   %i",y+1);
+			printf("\t|\t%d",uc[y]);
+			printf("\tUC  |\t%d",harga_uc[y]);
+			printf("\t  |");
+			printf("\n");
+		}
+	printf("|-------|-------------------|-------------|\n\n");
+	
+	while((lagi ='y')||(lagi ='Y')){
+	printf("Masukan Pilihan : ");
+	scanf("%i",&pilih);	
+	switch(pilih){
+		case 1: 
+				printf("%i%i\n",uc[0],harga_uc[0]);
+				break;	
+		case 2:
+				printf("%i",uc[1]);
+				printf(" UC Rp%i",harga_uc[1]);
+				printf("\n");
+				break;
+		case 3:
+				printf("%i",uc[2]);
+				printf(" UC Rp%i",harga_uc[2]);
+				printf("\n");
+				break;
+		case 4:
+				printf("%i",uc[3]);
+				printf(" UC Rp%i",harga_uc[3]);
+				printf("\n");
+				break;
+		case 5:
+				printf("%i",uc[4]);
+				printf(" UC Rp%i",harga_uc[4]);
+				printf("\n");
+				break;
+		case 6:
+				printf("%i",uc[5]);
+				printf(" UC Rp%i",harga_uc[5]);
+				printf("\n");
+				break;
+		case 7:
+				printf("%i",uc[6]);
+				printf(" UC Rp%i",harga_uc[6]);
+				printf("\n");
+				break;
+		case 8:
+				printf("%i",uc[7]);
+				printf(" UC Rp%i",harga_uc[7]);
+				printf("\n");
+				break;
+		case 9:
+				printf("%i",uc[8]);
+				printf(" UC Rp%i",harga_uc[8]);
+				printf("\n");
+				break;
+		case 10:
+				printf("%i",uc[9]);
+				printf(" UC Rp%i",harga_uc[9]);
+				printf("\n");
+				break;
+		case 11:
+				printf("%i",uc[10]);
+				printf(" UC Rp%i",harga_uc[10]);
+				printf("\n");
+				break;
+		case 12:
+				printf("%i",uc[11]);
+				printf(" UC Rp%i",harga_uc[11]);
+				printf("\n");
+				break;
+		case 13:
+				printf("%i",uc[12]);
+				printf(" UC Rp%i",harga_uc[12]);
+				printf("\n");
+				break;
+		case 14:
+				printf("%i",uc[13]);
+				printf(" UC Rp%i",harga_uc[13]);
+				printf("\n");
+				break;
+		case 15:
+				printf("%i",uc[14]);
+				printf(" UC Rp%i",harga_uc[14]);
+				printf("\n");
+				break;
+
+		case 16:
+				printf("%i",uc[15]);
+				printf(" UC Rp%i",harga_uc[15]);
+				printf("\n");
+				break;
+		}
+	printf("\nJumlah UC\t: %i",uc[pilih-1]);
+	printf("\nHarga UC\t: Rp.%i",harga_uc[pilih-1]);
+	harga = harga + harga_uc[pilih-1];
+	printf("\nNominal yang harus dibayar\t: Rp.%i",harga);
+	printf("\n\n\nApakah Anda ingin melanjutkan transaksi? (y/n) : ");
+	scanf("%c",lagi);					
+}
+}
+
+void akhir(){
+	
+		printf("\n\n--------------------------------------------------\n");
+		printf("STRUK TRANSFER :\n\n");	
+		printf("Total harga pembelian UC\t\tRp.%i",harga);
+		printf("\nSaldo awal Anda\t\t\t\tRp.%i",saldo);
+		printf("\nSisa saldo Anda\t\t\t\tRp.%i",saldo-harga);
+		printf("\n--------------------------------------------------\n");		
+}
+
+
+int main(){
+		
+	char username[10], pass[20];
+	char un[10]="chaeru_7", ps[12]="F1B019036";
+	
+		menu:	
+		printf("\n|------------------------------------------------|\n");
+		printf("|====== SELAMAT DATANG DI MENU TOP UP PUBG ======|");
+		printf("\n|------------------------------------------------|");
+		printf("\n\nMasukkan User name Anda\t: ");
+		scanf("%s",&username);
+		printf("\n\nMasukkan Password Anda\t: ");
+		scanf("%s",&pass);
+	
+			if((username[10] != un[10]) && (pass[20] != ps[20])){
+				system("cls");
+				
+				goto menu;
+				}
+				
+			else{
+				system("cls"); 				
+				menu();
+				akhir();
+			
+				}
+	
+		printf("\n\n|----------------------------------------------|\n");
+		printf("|====TERIMAKASIH TELAH MEMILIH LAYANAN KAMI====|");
+		printf("\n|----------------------------------------------|\n\n");
+	
+getch();
+}
